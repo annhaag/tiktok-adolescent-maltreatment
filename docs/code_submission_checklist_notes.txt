@@ -1,0 +1,48 @@
+Nature code and software submission checklist notes
+
+project title:
+- Digital Traces of Child Maltreatment: Investigating TikTok Data Donations and Predicting Depressive Symptoms in Adolescents
+
+repository:
+- GitHub repository with the code package
+- Code Ocean capsule imported from the GitHub repository
+
+license:
+- MIT license
+
+code files:
+- code/python/notebook.ipynb
+- code/r/sem_analysis.R
+
+demo data:
+- data/demo/dummy_raw_dataset.xlsx
+- data/demo/dummy_transformed_dataset.xlsx
+- data/demo/SEM_dummy_data.xlsx
+
+data restriction statement:
+- the original participant-level data are sensitive and confidential
+- the original dataset is not publicly shared
+- the bundled demo data are anonymized or synthetic and are included only to make the code runnable for review
+
+readme coverage:
+- system requirements included
+- installation instructions included
+- demo instructions included
+- instructions for use included
+- output files listed
+- runtime and demo settings noted
+
+demo settings worth noting:
+- python optuna n_trials lowered to 5
+- python demo sample size reduced to 10 participants
+
+r package list:
+- readxl
+- dplyr
+- lavaan
+
+code availability statement draft:
+- the code used in this study is available in a GitHub repository and a Code Ocean capsule
+- because the underlying study data are sensitive and confidential, the original dataset is not publicly shared
+- anonymized/synthetic demo files are provided to support reproducibility and review
+- access to restricted data may be requested from the corresponding author subject to ethics approval and data-use agreements

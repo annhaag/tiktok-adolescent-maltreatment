@@ -1,0 +1,19 @@
+name: tiktok_maltreatment
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.11
+  - r-base=4.5.1
+  - pip
+  - pip:
+      - pandas
+      - numpy
+      - scikit-learn
+      - optuna
+      - shap
+      - xgboost
+      - torch
+      - matplotlib
+      - seaborn
+      - jupyter
+      - statsmodels
