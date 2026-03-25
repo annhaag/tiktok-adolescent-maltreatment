@@ -7,24 +7,27 @@ The code is released under the MIT License.
 
 ##  repo structure
 
-project/
-  README.md
-  LICENSE
-  code/
-    run_analysis.sh
-    python/
-      notebook.ipynb
-      requirements.txt
-    r/
-      sem_analysis.R
-      r_requirements.txt
-  data/
-    demo/
-      dummy_raw_dataset.xlsx
-      dummy_transformed_dataset.xlsx
-      SEM_dummy_data.xlsx
-  docs/
-    code_submission_checklist_notes.txt
+## 📁 Project Structure
+   Directory/File                | Description                          |
+ |-------------------------------|--------------------------------------|
+ | **project/**                  | Root directory                       |
+ | ├── README.md                 | Project overview and instructions    |
+ | ├── LICENSE                   | License information                  |
+ | ├── **code/**                 | Main code directory                  |
+ | │   ├── run_analysis.sh       | Shell script for analysis            |
+ | │   ├── **python/**           | Python scripts and notebooks         |
+ | │   │   ├── notebook.ipynb    | Jupyter notebook                     |
+ | │   │   └── requirements.txt  | Python dependencies                  |
+ | │   └── **r/**                | R scripts                            |
+ | │       ├── sem_analysis.R    | R script for SEM analysis            |
+ | │       └── r_requirements.txt| R dependencies                       |
+ | ├── **data/**                 | Data directory                       |
+ | │   └── **demo/**             | Sample data files                    |
+ | │       ├── dummy_raw_dataset.xlsx     | Raw dataset                          |
+ | │       ├── dummy_transformed_dataset.xlsx | Transformed dataset          |
+ | │       └── SEM_dummy_data.xlsx        | SEM-specific data                    |
+ | └── **docs/**                 | Documentation                        |
+ |     └── code_submission_checklist_notes.txt | Notes for code submission     |
 
 ## contents
 
