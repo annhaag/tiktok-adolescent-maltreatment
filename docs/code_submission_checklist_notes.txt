@@ -1,78 +1,77 @@
-### **Nature code and software submission checklist notes (updated)**
+Nature code and software submission checklist notes
 
-**project title:**
+project title:
 
-* Digital Traces of Child Maltreatment: Investigating TikTok Data Donations and Predicting Depressive Symptoms in Adolescents
+Digital Traces of Child Maltreatment: Investigating TikTok Data Donations and Predicting Depressive Symptoms in Adolescents
 
-**license:**
+license:
 
-* MIT License (included as `LICENSE` file)
+MIT License (included as LICENSE file)
 
-**code files:**
+code files:
 
-* `code/run_analysis.sh` (Bash orchestration script)
-* `code/run_analysis.ps1` (PowerShell orchestration script)
-* `code/python/notebook.ipynb` (main analysis notebook)
-* `code/python/requirements.txt` (Python dependencies)
-* `code/python/pip_freeze.txt` (full Python environment snapshot)
-* `code/r/sem_analysis.R` (SEM analysis script)
-* `code/r/r_requirements.txt` (R dependencies)
+code/run_analysis.sh (Bash orchestration script)
+code/run_analysis.ps1 (PowerShell orchestration script)
+code/python/notebook.ipynb (main analysis notebook)
+code/python/requirements.txt (Python dependencies)
+code/python/pip_freeze.txt (full Python environment snapshot)
+code/r/sem_analysis.R (SEM analysis script)
+code/r/r_requirements.txt (R dependencies)
 
-**demo data:**
+demo data:
 
-* `data/demo/dummy_raw_dataset.xlsx`
-* `data/demo/dummy_transformed_dataset.xlsx`
-* `data/demo/SEM_dummy_data.xlsx`
+data/demo/dummy_raw_dataset.xlsx
+data/demo/dummy_transformed_dataset.xlsx
+data/demo/SEM_dummy_data.xlsx
 
-**data restriction statement:**
+data restriction statement:
 
-* the original participant-level dataset is sensitive and confidential
-* the original dataset is not publicly shared
-* bundled demo data are anonymized or synthetically generated and included to preserve structure and enable reproducibility of the pipeline
+the original participant-level dataset is sensitive and confidential
+the original dataset is not publicly shared
+bundled demo data are anonymized or synthetically generated and included to preserve structure and enable reproducibility of the pipeline
 
-**readme coverage:**
+readme coverage:
 
-* repository structure documented
-* system requirements specified
-* installation instructions provided
-* execution instructions for macOS/Linux and Windows included
-* dependency specifications for Python and R included
-* demo settings documented
-* expected outputs described
-* runtime expectations provided
-* data availability and restrictions explained
-* execution caveats for orchestration scripts noted (dependency/environment issues may require manual intervention)
+repository structure documented
+system requirements specified
+installation instructions provided
+execution instructions for macOS/Linux and Windows included
+dependency specifications for Python and R included
+demo settings documented
+expected outputs described
+runtime expectations provided
+data availability and restrictions explained
+execution caveats for orchestration scripts noted (dependency/environment issues may require manual intervention)
 
-**execution notes (important for reviewers):**
+execution notes (important for reviewers):
 
-* `run_analysis.sh` and `run_analysis.ps1` are designed to run the full pipeline end-to-end
-* scripts rely on correctly configured Python and R environments
-* in case of missing dependencies or environment issues, users may need to install packages manually or run components (Python notebook / R script) step-by-step
+run_analysis.sh and run_analysis.ps1 are designed to run the full pipeline end-to-end
+scripts rely on correctly configured Python and R environments
+in case of missing dependencies or environment issues, users may need to install packages manually or run components (Python notebook / R script) step-by-step
 
-**demo settings worth noting:**
+demo settings worth noting:
 
-* Optuna `n_trials` reduced from 20 to 5 for demonstration
-* python demo dataset limited to 10 participants to reduce runtime
-* no multiprocessing and no GPU required
+Optuna n_trials reduced from 20 to 5 for demonstration
+demo dataset limited to 10 participants to reduce runtime
+no multiprocessing and no GPU required
 
-**python environment:**
+python environment:
 
-* Python 3.10.11 (tested)
-* core packages listed in `code/python/requirements.txt` (e.g., numpy, pandas, scikit-learn, optuna, xgboost, shap, torch, etc.)
-* full environment snapshot available in `pip_freeze.txt`
+Python 3.10.11 (tested)
+core packages listed in code/python/requirements.txt (e.g., numpy, pandas, scikit-learn, optuna, xgboost, shap, torch, etc.)
+full environment snapshot available in pip_freeze.txt
 
-**r environment:**
+r environment:
 
-* R 4.5.1 (tested)
-* packages listed in `code/r/r_requirements.txt`:
+R 4.5.1 (tested)
+packages listed in code/r/r_requirements.txt:
+readxl
+dplyr
+lavaan
 
-  * readxl
-  * dplyr
-  * lavaan
+code availability statement:
 
-**code availability statement (draft):**
-
-* the code used in this study is publicly available in a GitHub repository (and, if applicable, a Code Ocean capsule)
-* due to the sensitive nature of the participant-level data, the original dataset is not publicly shared
-* anonymized and/or synthetic demo datasets are provided to enable reproducibility of the analysis workflow
-* access to the restricted dataset may be requested from the corresponding author, subject to ethical approval and data-use agreements
+the code used in this study is publicly available in a GitHub repository (and, if applicable, a Code Ocean capsule)
+due to the sensitive nature of the participant-level data, the original dataset is not publicly shared
+anonymized and/or synthetic demo datasets are provided to enable reproducibility of the analysis workflow
+access to the restricted dataset may be requested from the corresponding author, subject to ethical approval and data-use agreements
