@@ -72,7 +72,7 @@ fit_main <- sem(
 )
 
 # make sure results folder exists
-dir.create("project/results", recursive = TRUE, showWarnings = FALSE)
+dir.create("results", recursive = TRUE, showWarnings = FALSE)
 
 # save console-style summary to a text file
 capture.output(
