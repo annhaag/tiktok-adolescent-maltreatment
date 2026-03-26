@@ -9,7 +9,7 @@ for(pkg in required_packages){
 }
 
 ################## SEM analyses: longitudinal analyses depression ##############
-# digital traces of child maltreatment: investigating tiktok data donations and 
+# digital traces of child maltreatment: investigating tiktok data donations and
 # predicting depressive symptoms in adolescents
 ################################################################################
 
@@ -21,30 +21,11 @@ library(lavaan)
 
 df <- read_excel("data/demo/SEM_dummy_Data.xlsx")
 
-# 1. recoding of mfq-items (1=0, 2=1, 3=2)
-mfq_items <- paste0("mfq", sprintf("%02d", 1:13))  
-mfq_items_r <- paste0(mfq_items, "r")              
+if (!("Depression_t2" %in% names(df))) {
+  stop("Depression_t2 is missing from the dataset.")
+}
 
-# ensure items are numeric
-df[mfq_items] <- lapply(df[mfq_items], function(x) as.numeric(x))
-
-# apply recode
-df[mfq_items_r] <- lapply(df[mfq_items], function(x) {
-  dplyr::recode(x,
-                `1` = 0,
-                `2` = 1,
-                `3` = 2,
-                .default = NA_real_)
-})
-
-# 2. computing depression sum score at t2 (na if all items missing)
-df$Depression_t2 <- apply(df[mfq_items_r], 1, function(row) {
-  if (all(is.na(row))) NA else sum(row, na.rm = TRUE)
-})
-summary(df$Depression_t2)
-table(is.na(df$Depression_t2))
-
-# 3. defining variables and creating reduced dataset
+# 1. defining variables and creating reduced dataset
 
 # outcome
 outcome <- "Depression_t2"
@@ -78,7 +59,7 @@ for (v in predictors_fiml) {
   }
 }
 
-# 4. full-information maximum likelihood (fiml) estimation via sem
+# 2. full-information maximum likelihood (fiml) estimation via sem
 
 # fit main sem model with fiml and robust standard errors (mlr estimator)
 formula_main <- paste0("Depression_t2 ~ ", paste(all_predictors, collapse = " + "))
@@ -88,6 +69,15 @@ fit_main <- sem(
   data      = df,
   missing   = "fiml",
   estimator = "MLR"
+)
+
+# make sure results folder exists
+dir.create("project/results", recursive = TRUE, showWarnings = FALSE)
+
+# save console-style summary to a text file
+capture.output(
+  summary(fit_main, standardized = TRUE, rsquare = TRUE),
+  file = "results/SEM_main_results.txt"
 )
 
 summary(fit_main, standardized = TRUE, rsquare = TRUE)
